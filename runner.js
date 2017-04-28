@@ -11,11 +11,20 @@ function sleep(milliseconds) {
   }
 }
 
-// Your code here...
 let player = new JSRacer(['a','b','c'],20);
+
+// Initialize game
+player.print_board();
+sleep(1000);
+
+// Play the game
 while (player.finished()===false) {
-    player.advanced_player();
-    player.finished();
+  player.reset_board();
+  player.advanced_player();
+  sleep(500);
+  player.finished();
 }
+
+//Congratulate the winner
 player.winner();
 

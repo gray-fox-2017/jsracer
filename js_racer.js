@@ -65,13 +65,13 @@ class JSRacer {
     }
 
     if (realWinners.length === 1) {
-      console.log((realWinners[0] + " wins the race!"));
+      console.log((realWinners[0].toUpperCase() + " wins the race!"));
     }
     else {
       let announcement = "";
       for (let i=0; i<realWinners.length; i++) {
         if (i === realWinners.length-1) {
-          announcement += realWinners[i];
+          announcement += realWinners[i].toUpperCase();
         }
         else {
           announcement += realWinners[i] + ",";
