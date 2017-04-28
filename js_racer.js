@@ -25,8 +25,13 @@ class JSRacer {
   print_line(player, pos) {
     let line = []
     for (var i=0; i<this.lengthLine; i++){
-      if(i==pos){
+      if(this.players[player].position == Math.floor(this.lengthLine/2)){
         line.push(this.players[player].name + '|')
+        this.backObstacle(player); // bila kena jebakan
+      } else if(i==pos){
+        line.push(this.players[player].name + '|')
+      } else if(i==Math.floor(this.lengthLine/2)){ // jebakan
+        line.push('X|')
       } else {
         line.push(' |')
       }
@@ -64,8 +69,10 @@ class JSRacer {
       }
     }
   }
-  backObstacle(){
-
+  backObstacle(player){
+    var pos = this.players[player]
+    pos.position = Math.floor(this.lengthLine/3)
+    return pos.position
   }
   reset_board() {
     console.log("\x1B[2J")
