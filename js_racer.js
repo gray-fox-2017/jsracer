@@ -18,6 +18,7 @@ class JSRacer {
     let line = [];
     for(let j = 0; j <= this.length; j++) {
       line[j] = '| ';
+      if(j == Math.round(this.length/4)) line[j] = '|o'
     }
     line[pos] = '|' + this.player[player].name;
     line = line.join('')
@@ -38,6 +39,16 @@ class JSRacer {
     step = dice.roll();
     return step;
   }
+  boost(player) {
+    let step = this.player[player].step;
+    let pos = this.player[player].position;
+    if(pos == Math.round(this.length/4)) {
+      step = step + 2;
+      console.log('Someone get boosted!');
+      console.log(this.player[player].step)
+    }
+    return step;
+  }
   finished() {
     for(let i = 0; i < this.player.length; i++) {
       if(this.player[i].position >= this.length) {
@@ -49,16 +60,9 @@ class JSRacer {
     let pemenang = [];
     for(let i = 0; i < this.player.length; i++) {
       if(this.player[i].position >= this.length) {
-        pemenang.push(this.player[i].name);
-        // return console.log();
+        console.log(this.print_board());
+        console.log(`Player ${this.player[i].name} win!`)
       }
-    }
-    if(pemenang.length > 1) {
-      let pemenangs = pemenang.join(' and ')
-      return console.log(`Player ${pemenangs} win!`);
-    }
-    if(pemenang.length > 0) {
-      return console.log(`Player ${pemenang} win!`);
     }
   }
   reset_board() {
@@ -66,11 +70,4 @@ class JSRacer {
   }
 }
 
-
-// console.log(race.player)
-// console.log(race.print_board())
-// console.log(race.print_line(this.player[1]))
-// console.log(race.print_line(0, 4))
-// console.log(race.player.length)
-// console.log(race.advanced_player(0))
 export default JSRacer

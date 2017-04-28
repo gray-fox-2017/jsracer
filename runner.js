@@ -17,18 +17,20 @@ let race = new JSRacer(['a', 'b', 'c'], 40);
 
 let hitung = 1;
 while(race.finished() !== true) {
-  console.log(`Turn ${hitung}`)
+  // console.log(`Turn ${hitung}`)
   for(let j = 0; j < race.player.length; j++) {
     let step = race.advanced_player(j);
-    // console.log(step)
-    race.player[j].position = race.player[j].position + step;
+    let boost = race.boost(j);
+    race.player[j].position = race.player[j].position + step + boost;
     let pos = race.player[j].position
-    if(pos > race.length - 1) pos = race.length;
-    // console.log(pos)
+    if(pos > race.length - 1) pos = race.length - 2;
+    // race.boost(j);
+    // pos = pos;
     race.print_line(j, pos);
-    console.log(race.print_board())
   }
-  // race.reset_board();
+  console.log(race.print_board());
+  sleep(1000);
+  race.reset_board();
   race.winner();
   hitung++;
 }
