@@ -18,6 +18,8 @@ class JSRacer {
   }
 
   print_awal() {
+    console.log(" Let the game begin: ");
+    console.log(" --------------------\n");
     for (let i = 0; i < this.totalPlayer; i++) {
       this.print_line(this.arrayPlayer[i].nama, this.arrayPlayer[i].posisi);
     }
