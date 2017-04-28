@@ -4,7 +4,7 @@
 let Dice = require('./dice.js')
 
 class JSRacer {
-  constructor(players='abc', length=20) {
+  constructor(players='abc', length=80) {
     this.players = this.player_preparation(players);
     this.boardLength = length;
     this.finish = false;
