@@ -10,5 +10,25 @@ function sleep(milliseconds) {
     }
   }
 }
+let players = [
+  {name: 'A', posisi: 0},
+  {name: 'B', posisi: 0},
+  {name: 'C', posisi: 0}
+ ]
+
+let game = new JSRacer(players,20);
+
+while(!game.finished()){
+  game.print_board();
+  sleep(1000);
+}
+console.log(game.winner());
+
+console.log(game.players[0].posisi);
+console.log(game.players[1].posisi);
+console.log(game.players[2].posisi);
+
+
+
 
 // Your code here...
