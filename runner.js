@@ -10,5 +10,7 @@ function sleep(milliseconds) {
     }
   }
 }
+let game = new JSRacer(['a','b','c','d'],76)
+game.print_board()
 
 // Your code here...
