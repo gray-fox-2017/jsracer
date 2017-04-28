@@ -4,8 +4,8 @@ class Dice {
   constructor() {
 
   }
-  roll() {
-
+  roll(num) {
+      return Math.floor(Math.random() * num)
   }
 }
 
