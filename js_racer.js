@@ -46,6 +46,7 @@ class JSRacer {
       step = step + 2;
       console.log('Someone get boosted!');
       console.log(this.player[player].step)
+      // return;
     }
     return step;
   }
@@ -61,7 +62,8 @@ class JSRacer {
     for(let i = 0; i < this.player.length; i++) {
       if(this.player[i].position >= this.length) {
         console.log(this.print_board());
-        console.log(`Player ${this.player[i].name} win!`)
+        console.log(`Player ${this.player[i].name} win!`);
+        return;
       }
     }
   }
