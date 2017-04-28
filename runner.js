@@ -13,7 +13,13 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
-// sleep(1000);
+
 
 let test = new JSRacer(["A","B","C","D"],30);
-console.log(test.print_board());
+
+test.init_position();
+while(test.finished === false){
+  sleep(1000);
+  test.finish();
+  console.log(test.print_board());
+}
