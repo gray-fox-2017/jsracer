@@ -51,13 +51,15 @@ class JSRacer {
   }
 
   finish() {
-    for(let x = 0; x < this.position.length; x++){
+    // console.log(this.position.length);
+    for(let x = 0; x < this.players_list.length; x++){
       if(this.position[this.players_list[x]] >= this.length){
         this.finished = true;
       } else {
         this.finished = false;
       }
     }
+
   }
   winner() {
 

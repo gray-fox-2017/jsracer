@@ -21,5 +21,6 @@ test.init_position();
 while(test.finished === false){
   sleep(1000);
   test.finish();
+  // console.log(test.finished);
   console.log(test.print_board());
 }
