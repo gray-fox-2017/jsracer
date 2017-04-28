@@ -12,3 +12,10 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
+let play = new JSRacer(3, 20);
+
+while(play.finished() === false) {
+  sleep(1100);
+  play.reset_board();
+  play.print_board();
+}
