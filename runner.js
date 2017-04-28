@@ -12,3 +12,14 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
+var race = new JSRacer([{nama:'a',pos:0},{nama:'b',pos:0},{nama:'c',pos:0}],30);
+
+
+while(!race.finished()){
+race.print_board();
+// console.log(race.players[0].pos);
+// console.log(race.players[1].pos);
+// console.log(race.players[2].pos);
+sleep(1000);
+}
+console.log(`the Winner ${race.winner()}!`)
