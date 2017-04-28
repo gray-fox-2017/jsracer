@@ -11,11 +11,13 @@ function sleep(milliseconds) {
   }
 }
 
-let player = new JSRacer(['a','b','c'],20);
+let player = new JSRacer(['a','b','c','d','e','f'],30);
+sleep(1000);
 
 // Initialize game
+player.reset_board();
 player.print_board();
-sleep(1000);
+sleep(3000);
 
 // Play the game
 while (player.finished()===false) {
