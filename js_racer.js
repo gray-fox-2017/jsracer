@@ -27,24 +27,25 @@ class JSRacer {
   }
 
   print_board() {
+    console.log(`* = Spike Trap: Player going 3 spaces backwards\nWARP = Warp trap: Player warped to random location\n$ = Booster: Player next move + 4 spaces`)
     while(this.finish === false){
-    this.sleep(1000)
+    this.sleep(1200)
     this.reset_board()
     for(let i = 0; i < this.player.length; i++){
         if(this.finish === false){
         this.position[i] += this.dice.roll()
         if (this.position[i] === this.trap){
             this.position[i] = this.position[i]-3
-            console.log(`${this.player[i]} hit by a trap!!`)
+            console.log(`${this.player[i]} hit by a trap!! going 3 spaces backward`)
           }
         if(this.position[i] === this.power){
             this.position[i] += this.dice.roll() + 4
-            console.log(`${this.player[i]} BOOSTED!!`)
+            console.log(`${this.player[i]} BOOSTED!! next move + 4 spaces`)
           }
         if(this.position[i] === this.warptrap){
             this.position[i] = Math.floor(Math.random()*this.line)
-            console.log(`${this.player[i]} WARPED!`)
-        }
+            console.log(`${this.player[i]} WARPED to random location!!`)
+          }
         }
         if(this.position[i] >= this.line-1){
           this.position[i] = this.line-1
@@ -71,8 +72,15 @@ class JSRacer {
       if(i === this.warptrap){
         track.push("WARP")
       }
-      if(i == this.power){
+      if(i === this.power){
         track.push("$")
+      }
+
+      if(i === pos && pos === this.trap){
+        track.push("****" + player + "****")
+      }
+      if(i === pos && pos === this.power){
+        track.push("-------" + player + "---->>>>>>>>")
       }
 
       else {

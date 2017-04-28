@@ -11,7 +11,9 @@ function sleep(milliseconds) {
   }
 }
 let game = new JSRacer(['James','Stedy','Dery','Ambo'],76)
+
 game.print_board()
+
 //game.sleep(1500)
 
 // Your code here...
