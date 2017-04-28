@@ -5,8 +5,9 @@ class Dice {
 
   }
   roll() {
-
+    return Math.ceil(Math.random()*2)
   }
 }
 
-export default Dice
+// export default Dice                       //klo pake ini mesti pake babel-node
+module.exports = Dice
