@@ -14,6 +14,7 @@ class JSRacer {
       {nama: "A", posisi: 0, fullName: "Akbar"}
     ];
     this.dice = new Dice();
+    this.count = 0;
   }
 
   print_awal() {
@@ -23,10 +24,16 @@ class JSRacer {
   }
 
   print_board() {
+    if (this.count === this.totalPlayer) {
+      this.count = 0;
+    }
+
+    this.advanced_player(this.arrayPlayer[this.count]);
     for (let i = 0; i < this.totalPlayer; i++) {
-      this.advanced_player(this.arrayPlayer[i]);
       this.print_line(this.arrayPlayer[i].nama, this.arrayPlayer[i].posisi);
     }
+
+    this.count++;
   }
 
   print_line(player, pos) {

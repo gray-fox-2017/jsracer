@@ -14,13 +14,13 @@ function sleep(milliseconds) {
 // Your code here...
 let play = new JSRacer(5, 30);
 play.reset_board();
-console.log("Let the game begin: ");
-console.log("--------------------\n");
+console.log(" Let the game begin: ");
+console.log(" --------------------\n");
 play.print_awal();
-sleep(500);
+sleep(700);
 
 while(play.finished() === false) {
-  sleep(1100);
+  sleep(500);
   play.reset_board();
   play.print_board();
 }
