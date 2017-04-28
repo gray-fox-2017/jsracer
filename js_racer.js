@@ -30,8 +30,8 @@ class JSRacer {
       board.push(this.print_line(i, this.player[i].position))
       board.push('\n')
     }
-    board = board.join('');
-    return board
+    console.log(board = board.join(''));
+    return board;
   }
   advanced_player(player) {
     let dice = new Dice();
@@ -44,9 +44,7 @@ class JSRacer {
     let pos = this.player[player].position;
     if(pos == Math.round(this.length/4)) {
       step = step + 2;
-      console.log('Someone get boosted!');
-      console.log(this.player[player].step)
-      // return;
+      console.log(this.player[player].name + ' get boosted!');
     }
     return step;
   }
@@ -61,7 +59,7 @@ class JSRacer {
     let pemenang = [];
     for(let i = 0; i < this.player.length; i++) {
       if(this.player[i].position >= this.length) {
-        console.log(this.print_board());
+        this.print_board()
         console.log(`Player ${this.player[i].name} win!`);
         return;
       }
