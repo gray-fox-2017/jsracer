@@ -7,13 +7,19 @@ class JSRacer {
     this.totalPlayer = players;
     this.rowLength = length;
     this.arrayPlayer = [
-      {nama: "T", posisi: 0},
-      {nama: "I", posisi: 0},
-      {nama: "R", posisi: 0},
-      {nama: "7", posisi: 0},
-      {nama: "A", posisi: 0}
+      {nama: "T", posisi: 0, fullName: "Tirta"},
+      {nama: "I", posisi: 0, fullName: "Icha"},
+      {nama: "R", posisi: 0, fullName: "Rifki"},
+      {nama: "7", posisi: 0, fullName: "Lucky Seven"},
+      {nama: "A", posisi: 0, fullName: "Akbar"}
     ];
     this.dice = new Dice();
+  }
+
+  print_awal() {
+    for (let i = 0; i < this.totalPlayer; i++) {
+      this.print_line(this.arrayPlayer[i].nama, this.arrayPlayer[i].posisi);
+    }
   }
 
   print_board() {
@@ -48,7 +54,7 @@ class JSRacer {
   finished() {
     for (let i = 0; i < this.totalPlayer; i++) {
       if (this.arrayPlayer[i].posisi >= this.rowLength) {
-        this.winner(this.arrayPlayer[i].nama);
+        this.winner(this.arrayPlayer[i].fullName);
         return true;
       }
     }
@@ -56,7 +62,7 @@ class JSRacer {
   }
 
   winner(win) {
-    console.log("And the winner is: " + win);
+    console.log(`\n And the winner is: ${win}\n`);
   }
 
   reset_board() {
