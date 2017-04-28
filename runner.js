@@ -11,7 +11,7 @@ function sleep(milliseconds) {
   }
 }
 
-let main = new JSRacer(['adi','budi','citra','dessy','emillia'], 35);
+let main = new JSRacer(['S','I','D','II','K'], 35);
 
 main.print_board()
 console.log(main.print_line());
