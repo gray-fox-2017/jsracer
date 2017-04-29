@@ -1,6 +1,6 @@
 "use strict"
 
-import JSRacer from "./js_racer"
+import JSRacer from "./js_racer.js"
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -12,3 +12,9 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
+let game = new JSRacer(['a', 'b', 'c'], 30);
+while (game.finish == false){
+  game.reset_board();
+  game.print_board();
+  sleep(1000);
+}
