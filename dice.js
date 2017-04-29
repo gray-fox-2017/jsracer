@@ -1,8 +1,7 @@
 "use strict"
 
 class Dice {
-  constructor(num) {
-    this.num = num;
+  constructor() {
 
 
   }
@@ -12,8 +11,3 @@ class Dice {
 }
 
 export default Dice
-
-// Test
-
-// let getRandom = new Dice();
-// console.log(getRandom.roll());
