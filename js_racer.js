@@ -102,7 +102,7 @@ class JSRacer {
   }
 
   winner() {
-    return `Congratulation ${this.win} has WON!!`
+    return `Congratulation ${this.win} WINS!!`
   }
 
   reset_board() {
