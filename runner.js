@@ -12,3 +12,13 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
+let game = new JSRacer(5, 20);
+
+console.log(game);
+while (!game.finished()) {
+  game.reset_board();
+  game.print_board();
+  sleep(10000);
+}
+console.log(`yang menang ${game.winner}`);
+console.log(game);
