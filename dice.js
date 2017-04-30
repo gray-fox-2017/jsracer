@@ -1,11 +1,13 @@
 "use strict"
 
 class Dice {
-  constructor() {
-
+  constructor(Random_Angka){
+    this.Random_Angka = Random_Angka;
   }
-  roll() {
 
+  roll() {
+    let Dice = Math.floor(Math.random() * this.Random_Angka) + 1;
+      return Dice;
   }
 }
 
