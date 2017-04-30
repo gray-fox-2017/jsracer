@@ -3,27 +3,61 @@
 import Dice from "./dice.js"
 
 class JSRacer {
-  constructor(players, length) {
+    constructor(players, length) {
+        this.player = players;
+        this.length = length;
+        this.arrBoard = [];
+    }
 
-  }
-  print_board() {
+    print_board() {
+        var alpa = "abcdefghijklmnopqrstuvwxyz";
+        this.arrAlpa = alpa.split("");
 
-  }
-  print_line(player, pos) {
+        console.log("Ready To Start");
+        for (var i = 0; i < this.player; i++) {
+            console.log(this.print_line(this.arrAlpa[i]),0);
+        }
+    }
 
-  }
-  advanced_player(player) {
+    print_line(player, pos) {
+        this.length;
+        this.arrBoard = [];
+        var randomStep = new Dice(6);
+        for (var i = 0; i < this.length; i++) {
+            this.arrBoard.push([" |"]);
+        }
 
-  }
-  finished() {
+        if(pos == 0){
+            this.arrBoard.splice(0, 1, player);
+        }
+        else {
+           this.arrBoard.splice(randomStep.roll(),1,player);
+        }
+        return this.arrBoard.join("");
+    }
 
-  }
-  winner() {
+    advanced_player(player) {
 
-  }
-  reset_board() {
-    console.log("\x1B[2J")
-  }
+
+    }
+
+    finished() {
+
+    }
+
+    winner() {
+
+    }
+
+    reset_board() {
+        console.log("\x1B[2J")
+    }
 }
+
+
+let coba = new JSRacer(4,50);
+coba.print_board();
+
+
 
 export default JSRacer
