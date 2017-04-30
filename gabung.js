@@ -1,6 +1,13 @@
-"use strict"
-
-import Dice from "./dice.js"
+class Dice {
+  constructor() {
+    this._num = 0
+  }
+  roll() {
+    let newNum = Math.floor(Math.random()*6)+1
+    this._num = newNum;
+    return this._num
+  }
+}
 
 class JSRacer {
   constructor(players, panjang) {
@@ -13,7 +20,7 @@ class JSRacer {
   }
   print_board() {
     let papan = []
-    for (let i = 0; i < this.panjang*(this.player).length; i++) {
+    for (let i = 0; i < (this.panjang)*(this.player).length; i++) {
       (papan).push(' |');
     }
     this.board = papan;
@@ -89,4 +96,26 @@ class JSRacer {
   }
 }
 
-export default JSRacer
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) {
+      break;
+    }
+  }
+}
+
+let main = new JSRacer(['S','I','D','E','K'], 35);
+
+main.print_board()
+console.log(main.print_line());
+sleep(500);
+
+while (main.finished() === false) {
+  main.reset_board()
+  main.advanced_player();
+  console.log(main.print_line());
+  sleep(500);
+}
+
+console.log(main.winner());
