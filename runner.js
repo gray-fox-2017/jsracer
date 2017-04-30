@@ -10,17 +10,16 @@ function sleep(milliseconds) {
     }
   }
 }
-
-// Your code here...
 let pemain = [
   {nama : 'e', posisi : 0},
   {nama : 'r', posisi : 0},
   {nama : 'n', posisi : 0}
 ]
-let test = new JSRacer (pemain,50)
-
-while (!test.finished()) {
-  sleep(500)
+// Your code here...
+let test = new JSRacer (3)
+while (!test.winner()) {
+  sleep(400)
+  test.reset_board()
   test.print_board()
 
   //reset_board()
