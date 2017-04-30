@@ -12,3 +12,13 @@ function sleep(milliseconds) {
 }
 
 // Your code here...
+let abc = new JSRacer(3,30);
+abc.reset_board();
+console.log("Welcome Participant and Spectators\n               to                \n         HACKTIV8 GRANPRIX\n___________________________________\n");
+sleep(500);
+abc.print_start();
+while (abc.finished() != true) {
+  sleep(500);
+  abc.reset_board();
+  abc.print_board();
+}
