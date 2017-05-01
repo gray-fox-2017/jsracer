@@ -11,4 +11,20 @@ function sleep(milliseconds) {
   }
 }
 
+let main = new JSRacer(['S','I','D','II','K'], 35);
+
+main.print_board()
+console.log(main.print_line());
+sleep();
+
+while (main.finished() === false) {
+  main.reset_board()
+  main.advanced_player();
+  console.log(main.print_line());
+  sleep();
+}
+
+console.log(main.winner());
+
+
 // Your code here...
